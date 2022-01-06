@@ -115,6 +115,4 @@ async function connect_wallet(testnet) {
     return false
 }
 
-exports={
-    connect: connect_wallet
-}
+exports.connect = connect_wallet
