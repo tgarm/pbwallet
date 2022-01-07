@@ -23,10 +23,6 @@ function chain_args(testnet){
 
             chainRpcUrl : 'https://data-seed-prebsc-1-s1.binance.org:8545/',
             chainExplorerUrl : 'https://testnet.bscscan.com',
-            market_address : '0x144D4d30303484C0f7F89385291AcE90209A1b88',
-
-            chainRpcUrl : 'https://bsc-dataseed.binance.org',
-            chainExplorerUrl : 'https://bscscan.com',
             ctr_addrs: {
                 pbmarket: '0x723A7715A69B282Ce43E9e4C64a083ff88888336',
                 pbconnect: '0xaD112f956bf27A7a85492E7cfd39A43CfD3186Eb',
