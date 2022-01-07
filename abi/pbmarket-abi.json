@@ -40,6 +40,12 @@
 			},
 			{
 				"indexed": false,
+				"internalType": "address",
+				"name": "priceToken",
+				"type": "address"
+			},
+			{
+				"indexed": false,
 				"internalType": "uint256",
 				"name": "price",
 				"type": "uint256"
@@ -133,6 +139,11 @@
 		"name": "getSaleInfo",
 		"outputs": [
 			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
@@ -143,9 +154,28 @@
 				"type": "string"
 			},
 			{
-				"internalType": "bool",
+				"internalType": "string",
 				"name": "",
-				"type": "bool"
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "addr",
+				"type": "address"
+			}
+		],
+		"name": "getSellerName",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
 			}
 		],
 		"stateMutability": "view",
@@ -216,6 +246,11 @@
 				"type": "uint256"
 			},
 			{
+				"internalType": "address",
+				"name": "priceToken",
+				"type": "address"
+			},
+			{
 				"internalType": "uint256",
 				"name": "price",
 				"type": "uint256"
@@ -260,6 +295,19 @@
 			}
 		],
 		"name": "setFeeRate",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			}
+		],
+		"name": "setSellerName",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
