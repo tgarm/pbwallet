@@ -7,6 +7,10 @@ const ctr_abis = {
     pbx: require('./abi/pbx-abi.json')
 }
 
+const erc20_abi = require('./abi/erc20-abi.json')
+const erc721_abi = require('./abi/erc721-abi.json')
+
+
 const bsc = {}
 
 function chain_args(testnet){
@@ -115,4 +119,14 @@ async function connect_wallet(testnet) {
     return false
 }
 
+function erc20_contract(addr){
+    return new ethers.Contract(addr, erc20_abi, bsc.signer)
+}
+
+function erc721_contract(addr){
+    return new ethers.Contract(addr, erc721_abi, bsc.signer)
+}
+
 exports.connect = connect_wallet
+exports.erc20_contract = erc20_contract
+exports.erc721_contract = erc721_contract
