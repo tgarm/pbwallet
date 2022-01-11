@@ -4,7 +4,8 @@ const ctr_abis = {
     pbconnect: require('./abi/pbconnect-abi.json'),
     pbt: require('./abi/pbt-abi.json'),
     pbc: require('./abi/pbc-abi.json'),
-    pbx: require('./abi/pbx-abi.json')
+    pbx: require('./abi/pbx-abi.json'),
+    tokenredeem: require('./abi/tokenredeem-abi.json')
 }
 
 const erc20_abi = require('./abi/erc20-abi.json')
@@ -29,6 +30,7 @@ function chain_args(testnet){
                 pbx: '0xF38F63a18Dde812658D9bB54272B903413Bd5c62',
                 pbc: '0xB9B0Ec85Dd60bcC30ABaAA421D89EDaB792a4367',
                 pbt: "0x1dE49f4BfAEFA123238eC620792975f0Ee09F404",
+                tokenredeem: '0x3d599a7217226Df25A775d86d12bF33b35f8Faf0'
             }
         }
     } else {
