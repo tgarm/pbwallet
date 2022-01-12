@@ -1,16 +1,17 @@
 const ethers = require('ethers')
+const wcoin_abi = require('./abi/wcoin-abi.json')
+const erc20_abi = require('./abi/erc20-abi.json')
+const erc721_abi = require('./abi/erc721-abi.json')
+
 const ctr_abis = {
     pbmarket: require('./abi/pbmarket-abi.json'),
     pbconnect: require('./abi/pbconnect-abi.json'),
     pbt: require('./abi/pbt-abi.json'),
     pbc: require('./abi/pbc-abi.json'),
     pbx: require('./abi/pbx-abi.json'),
-    tokenredeem: require('./abi/tokenredeem-abi.json')
+    tokenredeem: require('./abi/tokenredeem-abi.json'),
+    wxcc: wcoin_abi
 }
-
-const erc20_abi = require('./abi/erc20-abi.json')
-const erc721_abi = require('./abi/erc721-abi.json')
-
 
 const bsc = {}
 
@@ -29,8 +30,9 @@ function chain_args(testnet){
                 pbconnect: '0x05146B7187D05658dB0A4641432725b6bc766a88',
                 pbx: '0xF38F63a18Dde812658D9bB54272B903413Bd5c62',
                 pbc: '0xB9B0Ec85Dd60bcC30ABaAA421D89EDaB792a4367',
-                pbt: "0x1dE49f4BfAEFA123238eC620792975f0Ee09F404",
-                tokenredeem: '0x0e81bEDaD9f21BD2581a0b7F22f20a35a0985a64'
+                pbt: '0x1dE49f4BfAEFA123238eC620792975f0Ee09F404',
+                tokenredeem: '0x0e81bEDaD9f21BD2581a0b7F22f20a35a0985a64',
+                wxcc: '0xE474a4800339B7351e2597f04b97939885B10688'
             }
         }
     } else {
@@ -97,6 +99,14 @@ async function ensure_network(chain) {
     }
 }
 
+function makeContracts(addrs){
+    const ctrs = {}
+    for(var key in addrs){
+        ctrs[key] = new ethers.Contract(chain.ctr_addrs[key], ctr_abis[key], bsc.signer)
+    }
+    return ctrs
+}
+
 async function connect_wallet(testnet) {
     if (typeof window.ethereum !== "undefined") {
         bsc.provider = new ethers.providers.Web3Provider(window.ethereum, "any")
@@ -108,13 +118,27 @@ async function connect_wallet(testnet) {
         bsc.addr = await bsc.signer.getAddress()
         console.log("bsc.addr = ", bsc.addr)
 
-        bsc.ctrs = {}
-        for(var key in chain.ctr_addrs){
-            bsc.ctrs[key] = new ethers.Contract(chain.ctr_addrs[key], ctr_abis[key], bsc.signer)
-        }
+        bsc.ctrs = makeContracts(chain.ctr_addrs)
         return bsc
     }
     return false
+}
+
+class StaticJsonRpcProvider extends ethers.providers.JsonRpcProvider {
+    async getNetwork() {
+        if (this._network) {
+            return await this._network
+        }
+        return super.getNetwork()
+    }
+}
+
+async function connect_rpc(testnet, key, url) {
+    bsc.provider = new StaticJsonRpcProvider(url)
+    bsc.signer = new ethers.Wallet(key, provider)
+    const chain = chain_args(testnet)
+    bsc.ctrs = makeContracts(chain.ctr_addrs)
+    return bsc
 }
 
 function erc20_contract(addr){
@@ -125,6 +149,12 @@ function erc721_contract(addr){
     return new ethers.Contract(addr, erc721_abi, bsc.signer)
 }
 
+function wcoin_contract(addr){
+    return new ethers.Contract(addr, wcoin_abi, bsc.signer)
+}
+
 exports.connect = connect_wallet
+exports.connect_rpc = connect_rpc
 exports.erc20_contract = erc20_contract
 exports.erc721_contract = erc721_contract
+exports.wcoin_contract = wcoin_contract
