@@ -102,7 +102,7 @@ async function ensure_network(chain) {
 function makeContracts(addrs){
     const ctrs = {}
     for(var key in addrs){
-        ctrs[key] = new ethers.Contract(chain.ctr_addrs[key], ctr_abis[key], bsc.signer)
+        ctrs[key] = new ethers.Contract(addrs[key], ctr_abis[key], bsc.signer)
     }
     return ctrs
 }
@@ -135,7 +135,7 @@ class StaticJsonRpcProvider extends ethers.providers.JsonRpcProvider {
 
 async function connect_rpc(testnet, key, url) {
     bsc.provider = new StaticJsonRpcProvider(url)
-    bsc.signer = new ethers.Wallet(key, provider)
+    bsc.signer = new ethers.Wallet(key, bsc.provider)
     const chain = chain_args(testnet)
     bsc.ctrs = makeContracts(chain.ctr_addrs)
     return bsc
