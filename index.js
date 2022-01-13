@@ -27,7 +27,7 @@ function chain_args(testnet){
             chainExplorerUrl : 'https://testnet.bscscan.com',
             ctr_addrs: {
                 pbmarket: '0x1A29fA4eC2e2A2e40069223C9f6A3EbBa1A37ADF',
-                pbconnect: '0xf69AffE0AFD00F5411C053c5C22dffE0CB4C9e48',
+                pbconnect: '0x704b19FCAeAd0Ccc188e638E2355C479a4165b37',
                 pbx: '0xF38F63a18Dde812658D9bB54272B903413Bd5c62',
                 pbc: '0xB9B0Ec85Dd60bcC30ABaAA421D89EDaB792a4367',
                 pbt: '0x1dE49f4BfAEFA123238eC620792975f0Ee09F404',
