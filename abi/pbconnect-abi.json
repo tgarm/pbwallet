@@ -64,12 +64,41 @@
 				"type": "uint256"
 			}
 		],
-		"name": "getPBXList",
+		"name": "PBXList",
 		"outputs": [
 			{
 				"internalType": "uint256[]",
 				"name": "",
 				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "pbtId",
+				"type": "uint256"
+			}
+		],
+		"name": "XAddressList",
+		"outputs": [
+			{
+				"internalType": "uint16[]",
+				"name": "",
+				"type": "uint16[]"
+			},
+			{
+				"internalType": "bytes32[]",
+				"name": "",
+				"type": "bytes32[]"
+			},
+			{
+				"internalType": "bytes32[]",
+				"name": "",
+				"type": "bytes32[]"
 			}
 		],
 		"stateMutability": "view",
