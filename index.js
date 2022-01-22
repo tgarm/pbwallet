@@ -32,7 +32,7 @@ function chain_args(testnet){
                 pbc: '0xB9B0Ec85Dd60bcC30ABaAA421D89EDaB792a4367',
                 pbt: '0x1dE49f4BfAEFA123238eC620792975f0Ee09F404',
                 tokenredeem: '0x0e81bEDaD9f21BD2581a0b7F22f20a35a0985a64',
-                wxcc: '0xE474a4800339B7351e2597f04b97939885B10688'
+                wxcc: '0x1B4bB84f3DCAc9899C41726838CdEC291DB52d25'
             }
         }
     } else {
