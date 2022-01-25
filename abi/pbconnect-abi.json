@@ -107,6 +107,24 @@
 	{
 		"inputs": [
 			{
+				"internalType": "uint256",
+				"name": "pbxId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "withdrawPuzzleHash",
+				"type": "bytes32"
+			}
+		],
+		"name": "bindWithdrawPuzzleHash",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "address",
 				"name": "",
 				"type": "address"
