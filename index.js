@@ -31,7 +31,7 @@ function chain_args(testnet){
                 pbconnect: '0x9d2ce300c6FC3B11b333ccBB812C705d6fc6B421',
                 pbx: '0xF38F63a18Dde812658D9bB54272B903413Bd5c62',
                 pbc: '0xB9B0Ec85Dd60bcC30ABaAA421D89EDaB792a4367',
-                pbt: '0x5C1ACeefAEbddb46848141ba5cEe1e83714f5Bf1',
+                pbt: '0x9481CE4EDa693D30f1a582CCeC1E5ab09f12ee91',
                 tokenredeem: '0x0e81bEDaD9f21BD2581a0b7F22f20a35a0985a64',
                 wxcc: '0x1B4bB84f3DCAc9899C41726838CdEC291DB52d25',
                 whdd: '0xC8877338a418C659cD86A3dd769D66B069bC996A'

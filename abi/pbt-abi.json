@@ -120,6 +120,19 @@
 	{
 		"inputs": [
 			{
+				"internalType": "string[]",
+				"name": "uris",
+				"type": "string[]"
+			}
+		],
+		"name": "addMetaURI",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "address",
 				"name": "to",
 				"type": "address"
@@ -232,19 +245,6 @@
 				"name": "",
 				"type": "address"
 			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "mintLimit",
-		"outputs": [
 			{
 				"internalType": "uint256",
 				"name": "",
@@ -435,19 +435,6 @@
 			}
 		],
 		"name": "setMintFee",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "limit",
-				"type": "uint256"
-			}
-		],
-		"name": "setMintLimit",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
