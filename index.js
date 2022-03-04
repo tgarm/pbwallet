@@ -29,7 +29,7 @@ function chain_args(testnet){
             ctr_addrs: {
                 pbmarket: '0x1A29fA4eC2e2A2e40069223C9f6A3EbBa1A37ADF',
                 pbconnect: '0x9d2ce300c6FC3B11b333ccBB812C705d6fc6B421',
-                pbx: '0xF38F63a18Dde812658D9bB54272B903413Bd5c62',
+                pbx: '0x22BD593Ac09C082FCF823d0eE113C160eBB2dab6',
                 pbc: '0xB9B0Ec85Dd60bcC30ABaAA421D89EDaB792a4367',
                 pbt: '0x9481CE4EDa693D30f1a582CCeC1E5ab09f12ee91',
                 tokenredeem: '0x0e81bEDaD9f21BD2581a0b7F22f20a35a0985a64',

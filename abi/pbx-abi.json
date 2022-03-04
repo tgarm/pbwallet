@@ -183,6 +183,29 @@
 	{
 		"inputs": [
 			{
+				"internalType": "uint16",
+				"name": "coinType",
+				"type": "uint16"
+			},
+			{
+				"internalType": "string[]",
+				"name": "uris",
+				"type": "string[]"
+			},
+			{
+				"internalType": "bytes32[]",
+				"name": "phs",
+				"type": "bytes32[]"
+			}
+		],
+		"name": "addMetaData",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "address",
 				"name": "to",
 				"type": "address"
@@ -246,6 +269,38 @@
 		"name": "burn",
 		"outputs": [],
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint16",
+				"name": "coinType",
+				"type": "uint16"
+			}
+		],
+		"name": "coinMintables",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "feeReceiver",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -331,16 +386,6 @@
 				"type": "uint16[]"
 			},
 			{
-				"internalType": "uint32[]",
-				"name": "",
-				"type": "uint32[]"
-			},
-			{
-				"internalType": "uint32[]",
-				"name": "",
-				"type": "uint32[]"
-			},
-			{
 				"internalType": "bytes32[]",
 				"name": "",
 				"type": "bytes32[]"
@@ -384,21 +429,6 @@
 				"internalType": "uint16",
 				"name": "coinType",
 				"type": "uint16"
-			},
-			{
-				"internalType": "uint32",
-				"name": "keyFingerPrint",
-				"type": "uint32"
-			},
-			{
-				"internalType": "uint32",
-				"name": "indexInWallet",
-				"type": "uint32"
-			},
-			{
-				"internalType": "bytes32",
-				"name": "depositPuzzleHash",
-				"type": "bytes32"
 			}
 		],
 		"name": "mint",
@@ -409,7 +439,38 @@
 				"type": "uint256"
 			}
 		],
-		"stateMutability": "nonpayable",
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "mintFee",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "mintables",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -569,6 +630,37 @@
 			}
 		],
 		"name": "setApprovalForAll",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "recv",
+				"type": "address"
+			}
+		],
+		"name": "setFeeReceiver",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "coin",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "setMintFee",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
