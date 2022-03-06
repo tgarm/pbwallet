@@ -5,10 +5,9 @@ const erc721_abi = require('./abi/erc721-abi.json')
 
 const ctr_abis = {
     pbmarket: require('./abi/pbmarket-abi.json'),
-    pbconnect: require('./abi/pbconnect-abi.json'),
+    pbpuzzlehash: require('./abi/pbpuzzlehash-abi.json'),
     pbt: require('./abi/pbt-abi.json'),
     pbc: require('./abi/pbc-abi.json'),
-    pbx: require('./abi/pbx-abi.json'),
     tokenredeem: require('./abi/tokenredeem-abi.json'),
     wxcc: wcoin_abi,
     whdd: wcoin_abi
@@ -28,8 +27,7 @@ function chain_args(testnet){
             chainExplorerUrl : 'https://testnet.bscscan.com',
             ctr_addrs: {
                 pbmarket: '0x1A29fA4eC2e2A2e40069223C9f6A3EbBa1A37ADF',
-                pbconnect: '0x9d2ce300c6FC3B11b333ccBB812C705d6fc6B421',
-                pbx: '0x22BD593Ac09C082FCF823d0eE113C160eBB2dab6',
+                pbpuzzlehash: '0xdD50f9D43F175E39CE4DF3979C2953551006Fd6E',
                 pbc: '0xB9B0Ec85Dd60bcC30ABaAA421D89EDaB792a4367',
                 pbt: '0x9481CE4EDa693D30f1a582CCeC1E5ab09f12ee91',
                 tokenredeem: '0x0e81bEDaD9f21BD2581a0b7F22f20a35a0985a64',
