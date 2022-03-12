@@ -1,4 +1,7 @@
 const ethers = require('ethers')
+const validator = require('validator')
+const { BscscanProvider } = require('@ethers-ancillary/bsc')
+
 const wcoin_abi = require('./abi/wcoin-abi.json')
 const erc20_abi = require('./abi/erc20-abi.json')
 const erc721_abi = require('./abi/erc721-abi.json')
@@ -13,7 +16,11 @@ const ctr_abis = {
     whdd: wcoin_abi
 }
 
-const bsc = {}
+const bsc = {
+    consts: {
+        zeroPuzzleHash: '0x0000000000000000000000000000000000000000000000000000000000000000'
+    }
+}
 
 function chain_args(testnet){
     if (testnet) {
@@ -36,13 +43,16 @@ function chain_args(testnet){
             }
         }
     } else {
-        throw new Error('support testnet only')
-        // bnet.chainId = '0x38'
-        // bnet.chainName = 'BSC Mainnet'
-        // bnet.chainNetName = 'bnb'
-        // bnet.chainNCSymbol = 'BNB'
-        // bnet.chainRpcUrl = 'https://bsc-dataseed.binance.org'
-        // bnet.chainExplorerUrl = 'https://bscscan.com'
+        return {
+            chainId : "0x38",
+            chainName : 'BSC Mainnet',
+            chainNetName : 'bnb',
+            chainNCSymbol : 'BNB',
+            chainRpcUrl : 'https://bsc-dataseed.binance.org',
+            chainExplorerUrl : 'https://bscscan.com',
+            ctr_addrs: {
+            }
+        }
     }
 }
 
@@ -134,7 +144,14 @@ class StaticJsonRpcProvider extends ethers.providers.JsonRpcProvider {
 }
 
 async function connect_rpc(testnet, key, url) {
-    bsc.provider = new StaticJsonRpcProvider(url)
+    if(validator.isURL(url)){
+        bsc.provider = new StaticJsonRpcProvider(url)
+    }else{  // BSCScan API-Key also supported
+        const apiKey = url
+        let network = 'bsc-mainnet'
+        if(testnet) network = 'bsc-testnet'
+        bsc.provider = new BscscanProvider(network, apiKey)
+    }
     bsc.signer = new ethers.Wallet(key, bsc.provider)
     const chain = chain_args(testnet)
     bsc.ctrs = makeContracts(chain.ctr_addrs)

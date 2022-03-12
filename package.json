@@ -1,6 +1,6 @@
 {
   "name": "pbwallet",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "node.js lib for PB wallet.",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/tgarm/pbwallet#readme",
   "dependencies": {
-    "ethers": "^5.5.2"
+    "@ethers-ancillary/bsc": "^0.0.3",
+    "ethers": "^5.5.3",
+    "validator": "^13.7.0"
   }
 }
