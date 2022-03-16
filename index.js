@@ -19,20 +19,26 @@ const ctr_abis = {
 const wcoin_infolist = [
     false,
     {
+        index: 1,
         name: 'Chia',
         symbol: 'XCH',
         prefix: 'xch',
-        bsymbol: 'wXCH'
+        bsymbol: 'wXCH',
+        ctrname: 'wxch'
     },{
+        index: 2,
         name: 'HDDcoin',
         symbol: 'HDD',
         prefix: 'hdd',
-        bsymbol: 'wHDD'
+        bsymbol: 'wHDD',
+        ctrname: 'whdd'
     },{
+        index: 3,
         name: 'Chives',
         symbol: 'XCC',
         prefix: 'xcc',
-        bsymbol: 'wXCC'
+        bsymbol: 'wXCC',
+        ctrname: 'wxcc'
     }
 ]
 
