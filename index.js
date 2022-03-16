@@ -16,6 +16,26 @@ const ctr_abis = {
     whdd: wcoin_abi
 }
 
+const wcoin_infolist = [
+    false,
+    {
+        name: 'Chia',
+        symbol: 'XCH',
+        prefix: 'xch',
+        bsymbol: 'wXCH'
+    },{
+        name: 'HDDcoin',
+        symbol: 'HDD',
+        prefix: 'hdd',
+        bsymbol: 'wHDD'
+    },{
+        name: 'Chives',
+        symbol: 'XCC',
+        prefix: 'xcc',
+        bsymbol: 'wXCC'
+    }
+]
+
 const bsc = {
     consts: {
         zeroPuzzleHash: '0x0000000000000000000000000000000000000000000000000000000000000000'
@@ -170,8 +190,16 @@ function wcoin_contract(addr){
     return new ethers.Contract(addr, wcoin_abi, bsc.signer)
 }
 
+function wcoin_info(idx){
+    if(wcoin_infolist[idx]){
+        return Object.assign({}, wcoin_infolist[idx])
+    }
+    return false
+}
+
 exports.connect = connect_wallet
 exports.connect_rpc = connect_rpc
 exports.erc20_contract = erc20_contract
 exports.erc721_contract = erc721_contract
 exports.wcoin_contract = wcoin_contract
+exports.wcoin_info = wcoin_info
