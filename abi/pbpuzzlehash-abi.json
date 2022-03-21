@@ -274,6 +274,11 @@
 				"internalType": "uint16[]",
 				"name": "",
 				"type": "uint16[]"
+			},
+			{
+				"internalType": "uint16[]",
+				"name": "",
+				"type": "uint16[]"
 			}
 		],
 		"stateMutability": "view",

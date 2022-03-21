@@ -60,7 +60,7 @@ function chain_args(testnet){
             chainExplorerUrl : 'https://testnet.bscscan.com',
             ctr_addrs: {
                 pbmarket: '0x1A29fA4eC2e2A2e40069223C9f6A3EbBa1A37ADF',
-                pbpuzzlehash: '0x2641C5ad4Df3EB3e6341a9967448F5EE7FBF5612',
+                pbpuzzlehash: '0x419E70DBC928FeE676EbDd53E7939B7d848f1b5C',
                 pbc: '0xB9B0Ec85Dd60bcC30ABaAA421D89EDaB792a4367',
                 pbt: '0x9481CE4EDa693D30f1a582CCeC1E5ab09f12ee91',
                 tokenredeem: '0x0e81bEDaD9f21BD2581a0b7F22f20a35a0985a64',
