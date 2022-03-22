@@ -13,7 +13,8 @@ const ctr_abis = {
     pbc: require('./abi/pbc-abi.json'),
     tokenredeem: require('./abi/tokenredeem-abi.json'),
     wxcc: wcoin_abi,
-    whdd: wcoin_abi
+    wxch: wcoin_abi,
+    whdd: wcoin_abi,
 }
 
 const wcoin_infolist = [
@@ -65,6 +66,7 @@ function chain_args(testnet){
                 pbt: '0x9481CE4EDa693D30f1a582CCeC1E5ab09f12ee91',
                 tokenredeem: '0x0e81bEDaD9f21BD2581a0b7F22f20a35a0985a64',
                 wxcc: '0x1B4bB84f3DCAc9899C41726838CdEC291DB52d25',
+                wxch: '0x11e028A899e844B495aFE1239f8d948f6E42a905',
                 whdd: '0xC8877338a418C659cD86A3dd769D66B069bC996A'
             }
         }
