@@ -3,6 +3,7 @@ const validator = require('validator')
 const { BscscanProvider } = require('@ethers-ancillary/bsc')
 
 const wcoin_abi = require('./abi/wcoin-abi.json')
+const wcoin_abi_old = require('./abi/wcoin-abi-old.json')
 const erc20_abi = require('./abi/erc20-abi.json')
 const erc721_abi = require('./abi/erc721-abi.json')
 
@@ -13,8 +14,8 @@ const ctr_abis = {
     pbc: require('./abi/pbc-abi.json'),
     tokenredeem: require('./abi/tokenredeem-abi.json'),
     wxcc: wcoin_abi,
-    wxch: wcoin_abi,
-    whdd: wcoin_abi,
+    wxch: wcoin_abi_old,
+    whdd: wcoin_abi_old,
 }
 
 const wcoin_infolist = [
