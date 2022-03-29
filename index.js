@@ -14,8 +14,8 @@ const ctr_abis = {
     pbp: require('./abi/pbp-abi.json'),
     tokenredeem: require('./abi/tokenredeem-abi.json'),
     wxcc: wcoin_abi,
-    wxch: wcoin_abi_old,
-    whdd: wcoin_abi_old,
+    wxch: wcoin_abi,
+    whdd: wcoin_abi,
 }
 
 const wcoin_infolist = [
