@@ -586,24 +586,6 @@
 	},
 	{
 		"inputs": [],
-		"name": "depositFee",
-		"outputs": [
-			{
-				"internalType": "uint16",
-				"name": "",
-				"type": "uint16"
-			},
-			{
-				"internalType": "uint64",
-				"name": "",
-				"type": "uint64"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
 		"name": "getCWAmount",
 		"outputs": [
 			{
@@ -622,7 +604,25 @@
 	},
 	{
 		"inputs": [],
-		"name": "maxSupply",
+		"name": "getDepositFee",
+		"outputs": [
+			{
+				"internalType": "uint16",
+				"name": "",
+				"type": "uint16"
+			},
+			{
+				"internalType": "uint64",
+				"name": "",
+				"type": "uint64"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getMaxSupply",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -635,12 +635,30 @@
 	},
 	{
 		"inputs": [],
-		"name": "mintableAmount",
+		"name": "getMintableAmount",
 		"outputs": [
 			{
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getWithdrawFee",
+		"outputs": [
+			{
+				"internalType": "uint16",
+				"name": "",
+				"type": "uint16"
+			},
+			{
+				"internalType": "uint64",
+				"name": "",
+				"type": "uint64"
 			}
 		],
 		"stateMutability": "view",
@@ -732,24 +750,6 @@
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "withdrawFee",
-		"outputs": [
-			{
-				"internalType": "uint16",
-				"name": "",
-				"type": "uint16"
-			},
-			{
-				"internalType": "uint64",
-				"name": "",
-				"type": "uint64"
 			}
 		],
 		"stateMutability": "view",

@@ -62,13 +62,13 @@ function chain_args(testnet){
             chainExplorerUrl : 'https://testnet.bscscan.com',
             ctr_addrs: {
                 pbmarket: '0x1A29fA4eC2e2A2e40069223C9f6A3EbBa1A37ADF',
-                pbpuzzlehash: '0x5506FD6ccf9a87376ED1c924041a43cb2c921058',
-                pbp: '0xCb7A587Ee1BBAF2385659D8ba8D3F4318601caE6',
-                pbt: '0x7A21cAce9529D0a99A80252D58314Ca51322E710',
-                tokenredeem: '0x0e81bEDaD9f21BD2581a0b7F22f20a35a0985a64',
+                pbpuzzlehash: '0x175A9d005c4D1818896ECD30E2799320EC4578b1',
+                pbp: '0x2ef8eCAD53c1ABaAd45c40747723049330880AC6',
+                pbt: '0x5a50aC6948ef41Be763D0e1493AfD5f4000174Cc',
+                tokenredeem: '0x535cA3a4eE9B7729aC4759e9aB8C1c2dF5b263bd',
                 wxcc: '0xD0b2ca07b3c23AC3719755071f33C0e3aB48c5e4',
-                wxch: '0x11e028A899e844B495aFE1239f8d948f6E42a905',
-                whdd: '0xC8877338a418C659cD86A3dd769D66B069bC996A'
+                wxch: '0x0713A2E8696D7984c8645D4C0367b18f1184c2DF',
+                whdd: '0x3963124C11AB802Af8Bd151F6A91136f5a096a2A'
             }
         }
     } else {
