@@ -68,7 +68,7 @@ function chain_args(testnet){
                 tokenredeem: '0x535cA3a4eE9B7729aC4759e9aB8C1c2dF5b263bd',
                 wxcc: '0xD0b2ca07b3c23AC3719755071f33C0e3aB48c5e4',
                 wxch: '0x0713A2E8696D7984c8645D4C0367b18f1184c2DF',
-                whdd: '0x3963124C11AB802Af8Bd151F6A91136f5a096a2A'
+                whdd: '0x30165028686E67e9dC71cDdcf6af0E0fd9B710Ba'
             }
         }
     } else {
