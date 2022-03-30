@@ -64,7 +64,7 @@ function chain_args(testnet){
                 pbmarket: '0x1A29fA4eC2e2A2e40069223C9f6A3EbBa1A37ADF',
                 pbpuzzlehash: '0x175A9d005c4D1818896ECD30E2799320EC4578b1',
                 pbp: '0x2ef8eCAD53c1ABaAd45c40747723049330880AC6',
-                pbt: '0xE2dB22e9B801a3e9f833244365eb1726cFdce014',
+                pbt: '0x75031916e437fEd81209d80FB73816ACEf5f8116',
                 tokenredeem: '0x535cA3a4eE9B7729aC4759e9aB8C1c2dF5b263bd',
                 wxcc: '0x3c3d9a014B001B2dd3Dc0c785261Af1ecfb9EbA9',
                 wxch: '0x242455fBcaE2f8e37B802eA7D20158643A7Ab952',
