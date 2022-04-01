@@ -19,7 +19,6 @@ const ctr_abis = {
 }
 
 const wcoin_infolist = [
-    false,
     {
         index: 1,
         name: 'Chia',
@@ -142,6 +141,10 @@ function makeContracts(addrs){
     const ctrs = {}
     for(var key in addrs){
         ctrs[key] = new ethers.Contract(addrs[key], ctr_abis[key], bsc.signer)
+        const info = wcoin_info(key,'ctrname')
+        if(info){
+            wcoin_infolist[info.index].address = addrs[key]
+        }
     }
     return ctrs
 }
@@ -199,11 +202,30 @@ function wcoin_contract(addr){
     return new ethers.Contract(addr, wcoin_abi, bsc.signer)
 }
 
-function wcoin_info(idx){
-    if(wcoin_infolist[idx]){
-        return Object.assign({}, wcoin_infolist[idx])
+function wcoin_info(idx, field){
+    if(!field){
+        field = 'index'
+    }
+    for(let i in wcoin_infolist){
+        if(wcoin_infolist[i][field] == idx){
+            return Object.assign({}, wcoin_infolist[i])
+        }
     }
     return false
+}
+
+function wcoin_list(field){
+    if(!field){
+        field = 'index'
+    }
+    const res = []
+    for(let i in wcoin_infolist){
+        const item = wcoin_infolist[i]
+        if(item){
+            res.push(item[field])
+        }
+    }
+    return res
 }
 
 exports.connect = connect_wallet
@@ -212,3 +234,4 @@ exports.erc20_contract = erc20_contract
 exports.erc721_contract = erc721_contract
 exports.wcoin_contract = wcoin_contract
 exports.wcoin_info = wcoin_info
+exports.wcoin_list = wcoin_list
