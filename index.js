@@ -19,6 +19,7 @@ const ctr_abis = {
 }
 
 const wcoin_infolist = [
+    false,
     {
         index: 1,
         name: 'Chia',
@@ -143,7 +144,7 @@ function makeContracts(addrs){
         ctrs[key] = new ethers.Contract(addrs[key], ctr_abis[key], bsc.signer)
         const info = wcoin_info(key,'ctrname')
         if(info){
-            wcoin_infolist[info.index].address = addrs[key]
+            wcoin_infolist[info.index-1].address = addrs[key]
         }
     }
     return ctrs
