@@ -13,9 +13,12 @@ const ctr_abis = {
     pbt: require('./abi/pbt-abi.json'),
     pbp: require('./abi/pbp-abi.json'),
     tokenredeem: require('./abi/tokenredeem-abi.json'),
+    usdt: erc20_abi,
+    wbnb: erc20_abi,
     wxcc: wcoin_abi,
     wxch: wcoin_abi,
     whdd: wcoin_abi,
+    router: require('./abi/router-abi.json'),
 }
 
 const wcoin_infolist = [
@@ -65,9 +68,12 @@ function chain_args(testnet){
                 pbp: '0x2ef8eCAD53c1ABaAd45c40747723049330880AC6',
                 pbt: '0x75031916e437fEd81209d80FB73816ACEf5f8116',
                 tokenredeem: '0x535cA3a4eE9B7729aC4759e9aB8C1c2dF5b263bd',
+                usdt: '0x7ef95a0FEE0Dd31b22626fA2e10Ee6A223F8a684',     // USDT https://amm.kiemtienonline360.com/
+                wbnb: '0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd',     // WBNB https://amm.kiemtienonline360.com/
                 wxcc: '0x3c3d9a014B001B2dd3Dc0c785261Af1ecfb9EbA9',
                 wxch: '0x242455fBcaE2f8e37B802eA7D20158643A7Ab952',
-                whdd: '0xD4C8dd1cE1013672F8A3eCfe0A8e094Aaef9799f'
+                whdd: '0xD4C8dd1cE1013672F8A3eCfe0A8e094Aaef9799f',
+                router: '0x9Ac64Cc6e4415144C455BD8E4837Fea55603e5c3'    // PancakeSwap: https://bsc.pancake.kiemtienonline360.com/
             }
         }
     } else {
@@ -82,6 +88,29 @@ function chain_args(testnet){
             }
         }
     }
+}
+
+let last_gp = {
+    price: ethers.BigNumber.from(0),
+    updated: 0
+}
+
+async function gas_price(bsc){
+    let now = Date.now()
+    if(now-last_gp.updated>1000*120){   // 120 seconds timeout for gasprice
+        let gp = await bsc.provider.getGasPrice()
+        if(gp){
+            let mult = 0
+            if('BSC_GASPRICE_MULT' in process.env){
+                mult = parseInt(process.env.BSC_GASPRICE_MULT)
+            }
+            if(mult){
+                gp = gp.mul(mult).div(10)
+            }
+            last_gp.price = gp
+        }
+    }
+    return last_gp.price
 }
 
 async function switch_network(chain) {
@@ -137,13 +166,14 @@ async function ensure_network(chain) {
     }
 }
 
-function makeContracts(addrs){
+async function makeContracts(bsc, addrs){
     const ctrs = {}
     for(var key in addrs){
         ctrs[key] = new ethers.Contract(addrs[key], ctr_abis[key], bsc.signer)
         for(let i in wcoin_infolist){
             if(wcoin_infolist[i].ctrname == key){
                 wcoin_infolist[i].address = addrs[key]
+                wcoin_infolist[i].bsymbol = await ctrs[key].symbol()
             }
         }
     }
@@ -159,9 +189,8 @@ async function connect_wallet(testnet) {
         await bsc.provider.send("eth_requestAccounts", [])
         bsc.signer = bsc.provider.getSigner()
         bsc.addr = await bsc.signer.getAddress()
-        console.log("bsc.addr = ", bsc.addr)
-
-        bsc.ctrs = makeContracts(chain.ctr_addrs)
+        bsc.chain = chain
+        bsc.ctrs = await makeContracts(bsc, chain.ctr_addrs)
         return bsc
     }
     return false
@@ -187,7 +216,8 @@ async function connect_rpc(testnet, key, url) {
     }
     bsc.signer = new ethers.Wallet(key, bsc.provider)
     const chain = chain_args(testnet)
-    bsc.ctrs = makeContracts(chain.ctr_addrs)
+    bsc.chain = chain
+    bsc.ctrs = await makeContracts(bsc, chain.ctr_addrs)
     return bsc
 }
 
@@ -229,10 +259,16 @@ function wcoin_list(field){
     return res
 }
 
+function get_bsc(){
+    return bsc
+}
+
 exports.connect = connect_wallet
 exports.connect_rpc = connect_rpc
 exports.erc20_contract = erc20_contract
 exports.erc721_contract = erc721_contract
+exports.gas_price = gas_price
+exports.get_bsc = get_bsc
 exports.wcoin_contract = wcoin_contract
 exports.wcoin_info = wcoin_info
 exports.wcoin_list = wcoin_list
