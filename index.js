@@ -3,7 +3,6 @@ const validator = require('validator')
 const { BscscanProvider } = require('@ethers-ancillary/bsc')
 
 const wcoin_abi = require('./abi/wcoin-abi.json')
-const wcoin_abi_old = require('./abi/wcoin-abi-old.json')
 const erc20_abi = require('./abi/erc20-abi.json')
 const erc721_abi = require('./abi/erc721-abi.json')
 
@@ -217,6 +216,7 @@ async function connect_rpc(testnet, key, url) {
     bsc.signer = new ethers.Wallet(key, bsc.provider)
     const chain = chain_args(testnet)
     bsc.chain = chain
+    bsc.addr = await bsc.signer.getAddress()
     bsc.ctrs = await makeContracts(bsc, chain.ctr_addrs)
     return bsc
 }
