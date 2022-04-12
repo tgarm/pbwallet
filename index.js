@@ -12,6 +12,8 @@ const ctr_abis = {
     pbt: require('./abi/pbt-abi.json'),
     pbp: require('./abi/pbp-abi.json'),
     tokenredeem: require('./abi/tokenredeem-abi.json'),
+    eth: erc20_abi,
+    busd: erc20_abi,
     usdt: erc20_abi,
     wbnb: erc20_abi,
     wxcc: wcoin_abi,
@@ -62,18 +64,19 @@ function chain_args(testnet){
             chainRpcUrl : 'https://data-seed-prebsc-1-s1.binance.org:8545/',
             chainExplorerUrl : 'https://testnet.bscscan.com',
             ctr_addrs: {
-                  pbp: '0xCcd003832F889af8B16160313F1390322AE58C2C',
-                  pbmarket: '0x65331D0b13EED1bfe60B8dc59d3E999288e3Cd3d',
-                  tokenredeem: '0xc339e2E1e3a97e764eD135D913e8330BC13DE15a',
-                  wxch: '0xF61BfA36440f468F07ed04374966B8FD0d4eEfeF',
-                  wxcc: '0x0B9a236d70F380E4aA06AFA47A38a0Ef8182F21F',
-                  whdd: '0xCD2B399704316672Cdf53330B6AD77D846cd618C',
-                  pbt: '0x0851A276124163e1a2D51B9A0DC4f8477D1e7f25',
-                  pbpuzzlehash: '0x907747966912BA16961e0D5ec4A8AC6E6BC55802',
-
-
-                  usdt: '0x7ef95a0FEE0Dd31b22626fA2e10Ee6A223F8a684',     // USDT https://amm.kiemtienonline360.com/
-                  wbnb: '0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd',     // WBNB https://amm.kiemtienonline360.com/
+                  pbp: '0x6D655608201e05FbcAC0FcBd6e2dD9184c9b17fd',
+                  pbmarket: '0xD74AD4a7A6E4beE788aB6D94e7A9eE93Ab701348',
+                  tokenredeem: '0x36b2Aaaf0D362a774867794f9133a4C956D3B376',
+                  wxch: '0xEc02B1b904a4e925F67fA8Bc6c5d428266F5C1a5',
+                  wxcc: '0x1aDCC92C322c21e387e6112bf162858AF208ff3a',
+                  whdd: '0x49532F59DdDA3D3c6011522Cb922b3622805bE46',
+                  pbt: '0x0ceaD067be3670Dfa1f35Cc320C96842e70e7AF3',
+                  pbpuzzlehash: '0x421be00884414f9BfEF3ac89DBF955638e215235',
+                  // tokens from: https://amm.kiemtienonline360.com/
+                  eth: '0x8babbb98678facc7342735486c851abd7a0d17ca',
+                  busd: '0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7',
+                  usdt: '0x7ef95a0FEE0Dd31b22626fA2e10Ee6A223F8a684',
+                  wbnb: '0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd',
                   router: '0x9Ac64Cc6e4415144C455BD8E4837Fea55603e5c3'    // PancakeSwap: https://bsc.pancake.kiemtienonline360.com/
             }
         }

@@ -41,25 +41,6 @@
       {
         "indexed": true,
         "internalType": "address",
-        "name": "oldMinter",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "newMinter",
-        "type": "address"
-      }
-    ],
-    "name": "MinterTransferred",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
         "name": "oldOp",
         "type": "address"
       },
@@ -119,7 +100,7 @@
   },
   {
     "inputs": [],
-    "name": "minter",
+    "name": "feeReceiver",
     "outputs": [
       {
         "internalType": "address",
@@ -161,13 +142,6 @@
   },
   {
     "inputs": [],
-    "name": "renounceMinter",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
     "name": "renounceOperator",
     "outputs": [],
     "stateMutability": "nonpayable",
@@ -184,11 +158,11 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "newMinter",
+        "name": "recv",
         "type": "address"
       }
     ],
-    "name": "transferMinter",
+    "name": "transferFeeReceiver",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -260,33 +234,6 @@
       }
     ],
     "name": "setRebindFee",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "feeReceiver",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function",
-    "constant": true
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "recv",
-        "type": "address"
-      }
-    ],
-    "name": "transferFeeReceiver",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
