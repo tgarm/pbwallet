@@ -16,6 +16,31 @@
       {
         "indexed": true,
         "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "pid",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "Deposit",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
         "name": "oldOp",
         "type": "address"
       },
@@ -70,7 +95,7 @@
         "type": "uint256"
       }
     ],
-    "name": "RewardsClaimed",
+    "name": "Reward",
     "type": "event"
   },
   {
@@ -95,33 +120,22 @@
         "type": "uint256"
       }
     ],
-    "name": "Staked",
+    "name": "Withdraw",
     "type": "event"
   },
   {
-    "anonymous": false,
-    "inputs": [
+    "inputs": [],
+    "name": "feeReceiver",
+    "outputs": [
       {
-        "indexed": true,
         "internalType": "address",
-        "name": "user",
+        "name": "",
         "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "pid",
-        "type": "uint256"
-      },
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
       }
     ],
-    "name": "WithdrawStake",
-    "type": "event"
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
   },
   {
     "inputs": [],
@@ -185,6 +199,11 @@
         "internalType": "uint256",
         "name": "rewardPerShare",
         "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "lockTime",
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -218,6 +237,19 @@
     "stateMutability": "view",
     "type": "function",
     "constant": true
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "recv",
+        "type": "address"
+      }
+    ],
+    "name": "transferFeeReceiver",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
     "inputs": [
@@ -269,6 +301,11 @@
         "internalType": "uint256",
         "name": "rewardDebt",
         "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "unlockTime",
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -279,12 +316,17 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_stakeToken",
+        "name": "stakeToken",
         "type": "address"
       },
       {
         "internalType": "uint256",
-        "name": "_allocPoint",
+        "name": "allocPoint",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "lockTime",
         "type": "uint256"
       }
     ],
@@ -302,11 +344,16 @@
       },
       {
         "internalType": "uint256",
-        "name": "_allocPoint",
+        "name": "allocPoint",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "lockTime",
         "type": "uint256"
       }
     ],
-    "name": "setPoolAlloc",
+    "name": "setPool",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -398,6 +445,11 @@
         "internalType": "uint256",
         "name": "",
         "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -418,36 +470,11 @@
         "internalType": "uint256[]",
         "name": "",
         "type": "uint256[]"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function",
-    "constant": true
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "pid",
-        "type": "uint256"
       },
       {
-        "internalType": "address",
-        "name": "account",
-        "type": "address"
-      }
-    ],
-    "name": "userInfo",
-    "outputs": [
-      {
-        "internalType": "uint256",
+        "internalType": "uint256[]",
         "name": "",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
+        "type": "uint256[]"
       }
     ],
     "stateMutability": "view",
@@ -531,6 +558,24 @@
       }
     ],
     "name": "withdraw",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "pid",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "forceWithdraw",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
