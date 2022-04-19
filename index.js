@@ -11,6 +11,7 @@ const ctr_abis = {
     pbpuzzlehash: require('./abi/pbpuzzlehash-abi.json'),
     pbt: require('./abi/pbt-abi.json'),
     pbp: require('./abi/pbp-abi.json'),
+    presale: require('./abi/presale-abi.json'),
     staking: require('./abi/staking-abi.json'),
     tokenredeem: require('./abi/tokenredeem-abi.json'),
     eth: erc20_abi,
@@ -67,6 +68,7 @@ function chain_args(testnet){
             ctr_addrs: {
                   pbp: '0xB8175b05ECC42572dB9F92278fdbb2512208596B',
                   pbmarket: '0x9C3E1f43C6438195E4c030B738a20Ff36FB58904',
+                  presale: '0x520B193E096368dA9eff2BB62E9A79127dcE6D60',
                   tokenredeem: '0xabD4D272E73110D6521081d03625db1d75c40A4D',
                   wxch: '0xC4839af7868b025207e364D051dA135aacAc3C2A',
                   wxcc: '0x44137B6d5160F6344D835F04843AbA260303e7ab',
