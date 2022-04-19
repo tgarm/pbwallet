@@ -73,7 +73,7 @@ function chain_args(testnet){
                   whdd: '0x6c003c2aD7720Dde4790d9A795F71c3d1F47e320',
                   pbt: '0x760427cDE87aDDe133E1447B7aA9aea0659221C0',
                   pbpuzzlehash: '0xE0E916f0B1C9698Fec9Db4C54A6b924eB2dee5A6',
-                  staking: '0xbf136f661915452be580D36B4FB2140d64A44414',
+                  staking: '0x3A54F062e4ea765741EF968aeD955E7103472C93',
 
                   // tokens from: https://amm.kiemtienonline360.com/
                   eth: '0x8babbb98678facc7342735486c851abd7a0d17ca',
