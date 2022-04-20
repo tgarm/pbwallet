@@ -94,6 +94,13 @@ function chain_args(testnet){
             chainRpcUrl : 'https://bsc-dataseed.binance.org',
             chainExplorerUrl : 'https://bscscan.com',
             ctr_addrs: {
+                // mainnet tokens: router from :https://docs.pancakeswap.finance
+                // others from https://bscscan.com token tracker
+                eth: '0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
+                busd: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+                usdt: '0x55d398326f99059fF775485246999027B3197955',
+                wbnb: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+                router: '0x10ED43C718714eb63d5aA57B78B54704E256024E'
             }
         }
     }
