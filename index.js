@@ -85,6 +85,16 @@ function chain_args(testnet){
             chainRpcUrl : 'https://bsc-dataseed.binance.org',
             chainExplorerUrl : 'https://bscscan.com',
             ctr_addrs: {
+                pbp: '0x6D655608201e05FbcAC0FcBd6e2dD9184c9b17fd',
+                pbmarket: '0xD74AD4a7A6E4beE788aB6D94e7A9eE93Ab701348',
+                tokenredeem: '0x36b2Aaaf0D362a774867794f9133a4C956D3B376',
+                wxch: '0xEc02B1b904a4e925F67fA8Bc6c5d428266F5C1a5',
+                wxcc: '0x1aDCC92C322c21e387e6112bf162858AF208ff3a',
+                pbt: '0x0ceaD067be3670Dfa1f35Cc320C96842e70e7AF3',
+                pbpuzzlehash: '0x421be00884414f9BfEF3ac89DBF955638e215235',
+                presale: '0xCa15E9268ECca7f75244E2dc4fe24447e1a7fa49',
+                staking: '0x49532F59DdDA3D3c6011522Cb922b3622805bE46',
+
                 // mainnet tokens: router from :https://docs.pancakeswap.finance
                 // others from https://bscscan.com token tracker
                 eth: '0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
