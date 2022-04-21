@@ -20,7 +20,6 @@ const ctr_abis = {
     wbnb: erc20_abi,
     wxcc: wcoin_abi,
     wxch: wcoin_abi,
-    whdd: wcoin_abi,
     router: require('./abi/router-abi.json'),
 }
 
@@ -32,13 +31,6 @@ const wcoin_infolist = [
         prefix: 'xch',
         bsymbol: 'wXCH',
         ctrname: 'wxch'
-    },{
-        index: 2,
-        name: 'HDDcoin',
-        symbol: 'HDD',
-        prefix: 'hdd',
-        bsymbol: 'wHDD',
-        ctrname: 'whdd'
     },{
         index: 3,
         name: 'Chives',
@@ -72,7 +64,6 @@ function chain_args(testnet){
                   tokenredeem: '0xabD4D272E73110D6521081d03625db1d75c40A4D',
                   wxch: '0xC4839af7868b025207e364D051dA135aacAc3C2A',
                   wxcc: '0x44137B6d5160F6344D835F04843AbA260303e7ab',
-                  whdd: '0x6c003c2aD7720Dde4790d9A795F71c3d1F47e320',
                   pbt: '0x760427cDE87aDDe133E1447B7aA9aea0659221C0',
                   pbpuzzlehash: '0xE0E916f0B1C9698Fec9Db4C54A6b924eB2dee5A6',
                   staking: '0x3A54F062e4ea765741EF968aeD955E7103472C93',
