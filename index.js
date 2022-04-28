@@ -20,6 +20,7 @@ const ctr_abis = {
     wbnb: erc20_abi,
     wxcc: wcoin_abi,
     wxch: wcoin_abi,
+    factory: require('./abi/factory-abi.json'),
     router: require('./abi/router-abi.json'),
 }
 
@@ -53,8 +54,10 @@ const chain_args = [
         chainName : 'BSC Mainnet',
         chainNetName : 'bnb',
         chainNCSymbol : 'BNB',
+
         chainRpcUrl : 'https://bsc-dataseed.binance.org',
         chainExplorerUrl : 'https://bscscan.com',
+        swapUrl: 'https://pancakeswap.finance',
         ctr_addrs: {
             pbp: '0x217634d01809d7B9C6348D70A95AE7f5E5179de3',
             pbmarket: '0xD74AD4a7A6E4beE788aB6D94e7A9eE93Ab701348',
@@ -72,6 +75,7 @@ const chain_args = [
             busd: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
             usdt: '0x55d398326f99059fF775485246999027B3197955',
             wbnb: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+            factory: '0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73',
             router: '0x10ED43C718714eb63d5aA57B78B54704E256024E'
         }
     },
@@ -83,6 +87,7 @@ const chain_args = [
 
         chainRpcUrl : 'https://data-seed-prebsc-1-s1.binance.org:8545/',
         chainExplorerUrl : 'https://testnet.bscscan.com',
+        swapUrl: 'https://pancake.kiemtienonline360.com/#',
         ctr_addrs: {
             pbp: '0xB8175b05ECC42572dB9F92278fdbb2512208596B',
             pbmarket: '0x9C3E1f43C6438195E4c030B738a20Ff36FB58904',
@@ -99,6 +104,7 @@ const chain_args = [
             busd: '0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7',
             usdt: '0x7ef95a0FEE0Dd31b22626fA2e10Ee6A223F8a684',
             wbnb: '0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd',
+            factory: '0xB7926C0430Afb07AA7DEfDE6DA862aE0Bde767bc',
             router: '0x9Ac64Cc6e4415144C455BD8E4837Fea55603e5c3'    // PancakeSwap: https://bsc.pancake.kiemtienonline360.com/
         }
     }
