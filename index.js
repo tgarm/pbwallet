@@ -49,33 +49,6 @@ const bsc = {
 
 const chain_args = [
     {
-        chainId : "0x61",
-        chainName : 'BSC Testnet',
-        chainNetName : 'bnbt',
-        chainNCSymbol : 'TBNB',
-
-        chainRpcUrl : 'https://data-seed-prebsc-1-s1.binance.org:8545/',
-        chainExplorerUrl : 'https://testnet.bscscan.com',
-        ctr_addrs: {
-            pbp: '0xB8175b05ECC42572dB9F92278fdbb2512208596B',
-            pbmarket: '0x9C3E1f43C6438195E4c030B738a20Ff36FB58904',
-            presale: '0x520B193E096368dA9eff2BB62E9A79127dcE6D60',
-            tokenredeem: '0xabD4D272E73110D6521081d03625db1d75c40A4D',
-            wxch: '0xC4839af7868b025207e364D051dA135aacAc3C2A',
-            wxcc: '0x44137B6d5160F6344D835F04843AbA260303e7ab',
-            pbt: '0x760427cDE87aDDe133E1447B7aA9aea0659221C0',
-            pbpuzzlehash: '0xE0E916f0B1C9698Fec9Db4C54A6b924eB2dee5A6',
-            staking: '0x3A54F062e4ea765741EF968aeD955E7103472C93',
-
-            // tokens from: https://amm.kiemtienonline360.com/
-            eth: '0x8babbb98678facc7342735486c851abd7a0d17ca',
-            busd: '0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7',
-            usdt: '0x7ef95a0FEE0Dd31b22626fA2e10Ee6A223F8a684',
-            wbnb: '0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd',
-            router: '0x9Ac64Cc6e4415144C455BD8E4837Fea55603e5c3'    // PancakeSwap: https://bsc.pancake.kiemtienonline360.com/
-        }
-    },
-    {
         chainId : "0x38",
         chainName : 'BSC Mainnet',
         chainNetName : 'bnb',
@@ -100,6 +73,33 @@ const chain_args = [
             usdt: '0x55d398326f99059fF775485246999027B3197955',
             wbnb: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
             router: '0x10ED43C718714eb63d5aA57B78B54704E256024E'
+        }
+    },
+    {
+        chainId : "0x61",
+        chainName : 'BSC Testnet',
+        chainNetName : 'bnbt',
+        chainNCSymbol : 'TBNB',
+
+        chainRpcUrl : 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+        chainExplorerUrl : 'https://testnet.bscscan.com',
+        ctr_addrs: {
+            pbp: '0xB8175b05ECC42572dB9F92278fdbb2512208596B',
+            pbmarket: '0x9C3E1f43C6438195E4c030B738a20Ff36FB58904',
+            presale: '0x520B193E096368dA9eff2BB62E9A79127dcE6D60',
+            tokenredeem: '0xabD4D272E73110D6521081d03625db1d75c40A4D',
+            wxch: '0xC4839af7868b025207e364D051dA135aacAc3C2A',
+            wxcc: '0x44137B6d5160F6344D835F04843AbA260303e7ab',
+            pbt: '0x760427cDE87aDDe133E1447B7aA9aea0659221C0',
+            pbpuzzlehash: '0xE0E916f0B1C9698Fec9Db4C54A6b924eB2dee5A6',
+            staking: '0x3A54F062e4ea765741EF968aeD955E7103472C93',
+
+            // tokens from: https://amm.kiemtienonline360.com/
+            eth: '0x8babbb98678facc7342735486c851abd7a0d17ca',
+            busd: '0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7',
+            usdt: '0x7ef95a0FEE0Dd31b22626fA2e10Ee6A223F8a684',
+            wbnb: '0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd',
+            router: '0x9Ac64Cc6e4415144C455BD8E4837Fea55603e5c3'    // PancakeSwap: https://bsc.pancake.kiemtienonline360.com/
         }
     }
 ]
