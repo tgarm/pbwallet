@@ -169,7 +169,7 @@ async function switch_network(chain) {
     return false
 }
 
-async function ensure_network(chains) {
+async function ensure_network(chains, autoswitch) {
     const network = await bsc.provider.getNetwork()
     bsc.provider.on('network', (newNetwork, oldNetwork) => {
         if (oldNetwork) {
@@ -183,9 +183,12 @@ async function ensure_network(chains) {
             return chain
         }
     }
-    const chain = chains[0]
-    const err = await switch_network(chain)
-    if (!err) return chain
+    if(autoswitch){
+        const chain = chains[0]
+        const err = await switch_network(chain)
+        if (!err) return chain
+    }
+    return false
 }
 
 async function makeContracts(bsc, addrs){
@@ -202,18 +205,27 @@ async function makeContracts(bsc, addrs){
     return ctrs
 }
 
-async function connect_wallet() {
-    if (typeof window.ethereum !== "undefined") {
-        bsc.provider = new ethers.providers.Web3Provider(window.ethereum, "any")
-        const chain = await ensure_network(chain_args)
-        if(chain){
-            await bsc.provider.send("eth_requestAccounts", [])
-            bsc.signer = bsc.provider.getSigner()
-            bsc.addr = await bsc.signer.getAddress()
-            bsc.chain = chain
-            bsc.ctrs = await makeContracts(bsc, chain.ctr_addrs)
-            return bsc
+async function connect_wallet(instance) {
+    let mobile = true
+    if(!instance){
+        if (typeof window.ethereum !== "undefined") {
+            instance = window.ethereum
+            mobile = false
         }
+    }
+    if(instance){
+        bsc.provider = new ethers.providers.Web3Provider(instance)
+        const chain = await ensure_network(chain_args, !mobile)
+        if(!chain) return false
+        bsc.chain = chain
+        if(!mobile){
+            await bsc.provider.send("eth_requestAccounts", [])
+        }
+        bsc.signer = bsc.provider.getSigner()
+        bsc.addr = await bsc.signer.getAddress()
+        bsc.ctrs = await makeContracts(bsc, chain.ctr_addrs)
+        bsc.mobile = mobile
+        return bsc
     }
     return false
 }
