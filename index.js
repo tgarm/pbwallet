@@ -205,8 +205,7 @@ async function makeContracts(bsc, addrs){
     return ctrs
 }
 
-async function connect_wallet(instance) {
-    let mobile = true
+async function connect_wallet(instance, mobile) {
     if(!instance){
         if (typeof window.ethereum !== "undefined") {
             instance = window.ethereum
@@ -228,6 +227,18 @@ async function connect_wallet(instance) {
         return bsc
     }
     return false
+}
+
+async function disconnect_wallet() {
+    if('disconnect' in bsc.provider){
+        await bsc.provider.disconnect()
+    }
+    delete bsc.addr
+    delete bsc.provider
+    delete bsc.signer
+    delete bsc.mobile
+    delete bsc.ctrs
+    delete bsc.chain
 }
 
 class StaticJsonRpcProvider extends ethers.providers.JsonRpcProvider {
@@ -299,6 +310,7 @@ function get_bsc(){
 }
 
 exports.connect = connect_wallet
+exports.disconnect = disconnect_wallet
 exports.connect_rpc = connect_rpc
 exports.erc20_contract = erc20_contract
 exports.erc721_contract = erc721_contract
