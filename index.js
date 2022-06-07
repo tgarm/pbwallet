@@ -269,10 +269,12 @@ async function connect_rpc(testnet, key, url) {
         bsc.provider = new BscscanProvider(network, apiKey)
     }
     bsc.signer = new ethers.Wallet(key, bsc.provider)
-    const chain = chain_args(testnet)
-    bsc.chain = chain
+    bsc.chain = chain_args[0]
+    if(testnet){
+        bsc.chain = chain_args[1]
+    }
     bsc.addr = await bsc.signer.getAddress()
-    bsc.ctrs = await makeContracts(bsc, chain.ctr_addrs)
+    bsc.ctrs = await makeContracts(bsc, bsc.chain.ctr_addrs)
     return bsc
 }
 
