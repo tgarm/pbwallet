@@ -19,6 +19,7 @@ const ctr_abis = {
     usdt: erc20_abi,
     wbnb: erc20_abi,
     wxcc: wcoin_abi,
+    whdd: wcoin_abi,
     wxch: wcoin_abi,
     factory: require('./abi/factory-abi.json'),
     router: require('./abi/router-abi.json'),
@@ -30,8 +31,15 @@ const wcoin_infolist = [
         name: 'Chia',
         symbol: 'XCH',
         prefix: 'xch',
-        bsymbol: 'wXCH',
+        bsymbol: 'WXCH',
         ctrname: 'wxch'
+    },{
+        index: 2,
+        name: 'HDDcoin',
+        symbol: 'HDD',
+        prefix: 'hdd',
+        bsymbol: 'WHDD',
+        ctrname: 'whdd'
     },{
         index: 3,
         name: 'Chives',
@@ -63,6 +71,7 @@ const chain_args = [
             pbmarket: '0xD74AD4a7A6E4beE788aB6D94e7A9eE93Ab701348',
             tokenredeem: '0x36b2Aaaf0D362a774867794f9133a4C956D3B376',
             wxch: '0xEc02B1b904a4e925F67fA8Bc6c5d428266F5C1a5',
+            whdd: '0xb558F597076babcC66250714F93A7b869Db26dB5',
             wxcc: '0x1aDCC92C322c21e387e6112bf162858AF208ff3a',
             pbt: '0x0ceaD067be3670Dfa1f35Cc320C96842e70e7AF3',
             pbpuzzlehash: '0x421be00884414f9BfEF3ac89DBF955638e215235',
@@ -93,7 +102,7 @@ const chain_args = [
             pbmarket: '0x9C3E1f43C6438195E4c030B738a20Ff36FB58904',
             presale: '0x520B193E096368dA9eff2BB62E9A79127dcE6D60',
             tokenredeem: '0xabD4D272E73110D6521081d03625db1d75c40A4D',
-            wxch: '0xC4839af7868b025207e364D051dA135aacAc3C2A',
+            wxch: '0xC4839af7868b025207e364D051dA135aacAc3C2A', // NO WHDD on testnet
             wxcc: '0x44137B6d5160F6344D835F04843AbA260303e7ab',
             pbt: '0x760427cDE87aDDe133E1447B7aA9aea0659221C0',
             pbpuzzlehash: '0xE0E916f0B1C9698Fec9Db4C54A6b924eB2dee5A6',
