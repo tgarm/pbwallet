@@ -259,9 +259,25 @@ class StaticJsonRpcProvider extends ethers.providers.JsonRpcProvider {
     }
 }
 
+function rpcProvider(url){
+    const au = new URL(url)
+    if(au.username&&au.password){
+        const urlstr = `${au.protocol}//${au.host}${au.pathname}`
+        return new StaticJsonRpcProvider({
+            url: urlstr,
+            user: au.username,
+            password: au.password
+        })
+    }else{
+        return new StaticJsonRpcProvider(url)
+    }
+}
+
 async function connect_rpc(testnet, key, url) {
     if(validator.isURL(url)){
-        bsc.provider = new StaticJsonRpcProvider(url)
+        bsc.provider = rpcProvider(url)
+    }else if(validator.isURL(url,{protocols:['ws','wss']})){
+        bsc.provider = new ethers.providers.WebSocketProvider(url)
     }else{  // BSCScan API-Key also supported
         const apiKey = url
         let network = 'bsc-mainnet'
