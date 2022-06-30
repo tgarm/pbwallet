@@ -45,8 +45,15 @@ const wcoin_infolist = [
         name: 'Chives',
         symbol: 'XCC',
         prefix: 'xcc',
-        bsymbol: 'wXCC',
+        bsymbol: 'WXCC',
         ctrname: 'wxcc'
+    },{
+        index: 4,
+        name: 'Venidium',
+        symbol: 'XVM',
+        prefix: 'xvm',
+        bsymbol: 'WXVM',
+        ctrname: 'wxvm'
     }
 ]
 
@@ -104,6 +111,7 @@ const chain_args = [
             tokenredeem: '0xabD4D272E73110D6521081d03625db1d75c40A4D',
             wxch: '0xC4839af7868b025207e364D051dA135aacAc3C2A', // NO WHDD on testnet
             wxcc: '0x44137B6d5160F6344D835F04843AbA260303e7ab',
+            wxvm: '0xC122C907e3B5D271c8AB589080AF92230d36Ef0a',
             pbt: '0x760427cDE87aDDe133E1447B7aA9aea0659221C0',
             pbpuzzlehash: '0xE0E916f0B1C9698Fec9Db4C54A6b924eB2dee5A6',
             staking: '0x3A54F062e4ea765741EF968aeD955E7103472C93',
