@@ -118,7 +118,7 @@ const chain_args = [
             pbt: '0x760427cDE87aDDe133E1447B7aA9aea0659221C0',
             pbpuzzlehash: '0xE0E916f0B1C9698Fec9Db4C54A6b924eB2dee5A6',
             staking: '0x3A54F062e4ea765741EF968aeD955E7103472C93',
-            holdgame: '0xd26Aec6Bc71fcaBe022cF009D8D90E36D85B958a',
+            holdgame: '0x9D1b8e34ba769EB7f9a33A5C3751b72B09bCf761',
 
             // tokens from: https://amm.kiemtienonline360.com/
             eth: '0x8babbb98678facc7342735486c851abd7a0d17ca',
