@@ -5,41 +5,15 @@
 				"internalType": "address",
 				"name": "rewardToken",
 				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "startTime",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "nonpayable",
 		"type": "constructor"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"internalType": "address",
-				"name": "buyer",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "bonusIdx",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "ticketIdx",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "BonusHit",
-		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -72,11 +46,48 @@
 			{
 				"indexed": false,
 				"internalType": "uint256",
-				"name": "idx",
+				"name": "from",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "count",
 				"type": "uint256"
 			}
 		],
-		"name": "TicketBought",
+		"name": "TicketsBought",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "winner",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "stageIdx",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "ticketIdx",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "WinBonus",
 		"type": "event"
 	},
 	{
@@ -97,11 +108,6 @@
 		"name": "bonusState",
 		"outputs": [
 			{
-				"internalType": "address[]",
-				"name": "",
-				"type": "address[]"
-			},
-			{
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
@@ -122,9 +128,14 @@
 				"type": "uint256"
 			},
 			{
-				"internalType": "bool",
+				"internalType": "uint256",
 				"name": "",
-				"type": "bool"
+				"type": "uint256"
+			},
+			{
+				"internalType": "int256",
+				"name": "",
+				"type": "int256"
 			}
 		],
 		"stateMutability": "view",
@@ -139,13 +150,7 @@
 			}
 		],
 		"name": "buy",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
+		"outputs": [],
 		"stateMutability": "payable",
 		"type": "function"
 	},
@@ -173,24 +178,6 @@
 			}
 		],
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "configInfo",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "pure",
 		"type": "function"
 	},
 	{
@@ -243,6 +230,13 @@
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "teamDrain",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
