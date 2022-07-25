@@ -1,6 +1,6 @@
 {
   "name": "pbwallet",
-  "version": "0.3.20",
+  "version": "0.3.21",
   "description": "node.js lib for PB wallet.",
   "main": "index.js",
   "scripts": {
