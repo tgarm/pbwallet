@@ -23,6 +23,7 @@ const ctr_abis = {
     whdd: wcoin_abi,
     wxch: wcoin_abi,
     wxvm: wcoin_abi,
+    wxfx: wcoin_abi,
     factory: require('./abi/factory-abi.json'),
     router: require('./abi/router-abi.json'),
 }
