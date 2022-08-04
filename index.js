@@ -100,6 +100,7 @@ const chain_args = [
             wxcc: '0x1aDCC92C322c21e387e6112bf162858AF208ff3a',
             wxvm: '0x7298A9FbA85C1fe25455991495D919c51f59E8A9',
             wxfx: '0x006294e75C3CE65910Cf6fa0EA57Dcf058dc30b0',
+            wstai:'0x9A19011ab69DA981360062B54A8223f6002Fe515', 
             pbt: '0x0ceaD067be3670Dfa1f35Cc320C96842e70e7AF3',
             pbpuzzlehash: '0x421be00884414f9BfEF3ac89DBF955638e215235',
             presale: '0x091f5A48E8C0CC8f566ba0f0E4e4d40b38212b9E',
