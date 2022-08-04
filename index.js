@@ -23,6 +23,7 @@ const ctr_abis = {
     whdd: wcoin_abi,
     wxch: wcoin_abi,
     wxvm: wcoin_abi,
+    wstai: wcoin_abi,
     wxfx: wcoin_abi,
     factory: require('./abi/factory-abi.json'),
     router: require('./abi/router-abi.json'),
@@ -64,6 +65,13 @@ const wcoin_infolist = [
         prefix: 'xfx',
         bsymbol: 'WXFX',
         ctrname: 'wxfx'
+    },{
+        index: 6,
+        name: 'Staicoin',
+        symbol: 'STAI',
+        prefix: 'stai',
+        bsymbol: 'WSTAI',
+        ctrname: 'wstai'
     }
 ]
 
@@ -125,6 +133,7 @@ const chain_args = [
             wxcc: '0x44137B6d5160F6344D835F04843AbA260303e7ab',
             wxvm: '0xC122C907e3B5D271c8AB589080AF92230d36Ef0a',
             wxfx: '0x27515B64cBE74440Ae5B708E1eb8De75cfbD916b', // WXFX on testnet: Solidity 0.8.15, 200 optimize
+            wstai: '0x7E3f59eee91Dce41042b75747a0b6cEF24Be58FA', // WSTAI on testnet: Solidity 0.8.15, 200 optimize
             pbt: '0x760427cDE87aDDe133E1447B7aA9aea0659221C0',
             pbpuzzlehash: '0xE0E916f0B1C9698Fec9Db4C54A6b924eB2dee5A6',
             staking: '0x3A54F062e4ea765741EF968aeD955E7103472C93',
