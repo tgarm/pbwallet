@@ -23,8 +23,8 @@ const ctr_abis = {
     whdd: wcoin_abi,
     wxch: wcoin_abi,
     // wxvm: wcoin_abi,
-    wstai: wcoin_abi,
-    // wxfx: wcoin_abi,
+    // wstai: wcoin_abi,
+    wxfx: wcoin_abi,
     factory: require('./abi/factory-abi.json'),
     router: require('./abi/router-abi.json'),
 }
@@ -60,22 +60,22 @@ const wcoin_infolist = [
     //     bsymbol: 'WXVM',
     //     ctrname: 'wxvm'
     // },
-    // {
-    //     index: 5,
-    //     name: 'Flax',
-    //     symbol: 'XFX',
-    //     prefix: 'xfx',
-    //     bsymbol: 'WXFX',
-    //     ctrname: 'wxfx'
-    // },
-        {
-        index: 6,
-        name: 'Staicoin',
-        symbol: 'STAI',
-        prefix: 'stai',
-        bsymbol: 'WSTAI',
-        ctrname: 'wstai'
-    }
+    {
+        index: 5,
+        name: 'Flax',
+        symbol: 'XFX',
+        prefix: 'xfx',
+        bsymbol: 'WXFX',
+        ctrname: 'wxfx'
+    },
+    //     {
+    //     index: 6,
+    //     name: 'Staicoin',
+    //     symbol: 'STAI',
+    //     prefix: 'stai',
+    //     bsymbol: 'WSTAI',
+    //     ctrname: 'wstai'
+    // }
 ]
 
 const bsc = {
@@ -102,8 +102,8 @@ const chain_args = [
             whdd: '0xb558F597076babcC66250714F93A7b869Db26dB5',
             wxcc: '0x1aDCC92C322c21e387e6112bf162858AF208ff3a',
             // wxvm: '0x7298A9FbA85C1fe25455991495D919c51f59E8A9',
-            // wxfx: '0x006294e75C3CE65910Cf6fa0EA57Dcf058dc30b0',
-            wstai:'0x9A19011ab69DA981360062B54A8223f6002Fe515', 
+            wxfx: '0x006294e75C3CE65910Cf6fa0EA57Dcf058dc30b0',
+            // wstai:'0x9A19011ab69DA981360062B54A8223f6002Fe515', 
             pbt: '0x0ceaD067be3670Dfa1f35Cc320C96842e70e7AF3',
             pbpuzzlehash: '0x421be00884414f9BfEF3ac89DBF955638e215235',
             presale: '0x091f5A48E8C0CC8f566ba0f0E4e4d40b38212b9E',
@@ -136,8 +136,8 @@ const chain_args = [
             wxch: '0xC4839af7868b025207e364D051dA135aacAc3C2A', // NO WHDD on testnet
             wxcc: '0x44137B6d5160F6344D835F04843AbA260303e7ab',
             // wxvm: '0xC122C907e3B5D271c8AB589080AF92230d36Ef0a',
-            // wxfx: '0x27515B64cBE74440Ae5B708E1eb8De75cfbD916b', // WXFX on testnet: Solidity 0.8.15, 200 optimize
-            wstai: '0x7E3f59eee91Dce41042b75747a0b6cEF24Be58FA', // WSTAI on testnet: Solidity 0.8.15, 200 optimize
+            wxfx: '0x27515B64cBE74440Ae5B708E1eb8De75cfbD916b', // WXFX on testnet: Solidity 0.8.15, 200 optimize
+            // wstai: '0x7E3f59eee91Dce41042b75747a0b6cEF24Be58FA', // WSTAI on testnet: Solidity 0.8.15, 200 optimize
             pbt: '0x760427cDE87aDDe133E1447B7aA9aea0659221C0',
             pbpuzzlehash: '0xE0E916f0B1C9698Fec9Db4C54A6b924eB2dee5A6',
             staking: '0x3A54F062e4ea765741EF968aeD955E7103472C93',
