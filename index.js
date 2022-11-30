@@ -18,6 +18,7 @@ const ctr_abis = {
     eth: erc20_abi,
     busd: erc20_abi,
     usdt: erc20_abi,
+    usdc:erc20_abi,
     wbnb: erc20_abi,
     wxcc: wcoin_abi,
     whdd: wcoin_abi,
@@ -114,6 +115,7 @@ const chain_args = [
             eth: '0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
             busd: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
             usdt: '0x55d398326f99059fF775485246999027B3197955',
+            usdc:"0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
             wbnb: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
             factory: '0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73',
             router: '0x10ED43C718714eb63d5aA57B78B54704E256024E'
