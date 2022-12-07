@@ -215,14 +215,25 @@ async function switch_network(chain) {
     return false
 }
 
+let network_need_watch = false
 async function ensure_network(chains, autoswitch) {
+    console.log('ensure_network: try get network')
     const network = await bsc.provider.getNetwork()
-    bsc.provider.on('network', (newNetwork, oldNetwork) => {
-        if (oldNetwork) {
-            window.location.reload()
-            return false
+    console.log('ensure_network: network got', network)
+    if (network_need_watch) {
+        try {
+            bsc.provider.on('network', (newNetwork, oldNetwork) => {
+                if (oldNetwork) {
+                    window.location.reload()
+                    return false
+                }
+            })
+            network_need_watch = false
+        }catch (error) {
+            console.log('watch network change error', error)
         }
-    })
+    }
+   
     for(let i in chains){
        const chain = chains[i]
        if (network.chainId == parseInt(chain.chainId) && network.name == chain.chainNetName) {
